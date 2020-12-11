@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="com/nt/cfgs/" kind="src" path="src"/>
+	<classpathentry kind="src" path="src/com/nt/cfgs"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-13">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="E:/spring5.3.1Soft/spring-framework-5.3.1/libs/spring-aop-5.3.1.jar"/>
+	<classpathentry kind="lib" path="E:/spring5.3.1Soft/spring-framework-5.3.1/libs/spring-aspects-5.3.1.jar"/>
+	<classpathentry kind="lib" path="E:/spring5.3.1Soft/spring-framework-5.3.1/libs/spring-beans-5.3.1.jar"/>
+	<classpathentry kind="lib" path="E:/spring5.3.1Soft/spring-framework-5.3.1/libs/spring-context-5.3.1.jar"/>
+	<classpathentry kind="lib" path="E:/spring5.3.1Soft/spring-framework-5.3.1/libs/spring-context-support-5.3.1.jar"/>
+	<classpathentry kind="lib" path="E:/spring5.3.1Soft/spring-framework-5.3.1/libs/spring-core-5.3.1.jar"/>
+	<classpathentry kind="lib" path="E:/spring5.3.1Soft/spring-framework-5.3.1/libs/spring-expression-5.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nareshit/Downloads/commons-logging-1.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

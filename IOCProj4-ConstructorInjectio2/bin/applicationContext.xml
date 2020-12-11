@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+  <!-- cfg  java.util.Date class as spring bean (dependent calss) -->
+  <bean id="dt" class="java.util.Date"/>
+  
+  <!-- <bean id="dt1" class="java.util.Date">
+       <property name="year" value="110"/>  takes 1900+ given value  (1900+110=2010)
+       <property name="month" value="13"/>  0  to 11
+        <property name="date" value="45"/>  1  to 31
+        <property name="date">
+            <value>45</value>
+        </property>
+  </bean> -->
+  
+  <bean id="dt1"  class="java.util.Date">
+      <!--  <constructor-arg name="year" value="115"/> -->
+       <!-- <constructor-arg name="month" value="3"/>
+       <constructor-arg name="date" value="10"/> -->
+       <property name="year" value="119"/>
+  </bean>
+  
+  <!-- cfg WishMessageGeneator as Spring bean (target class) -->
+  <bean id="wmg"  class="com.nt.beans.WishMessageGenerator">
+     <property name="date"  ref="dt1"/>
+  </bean>
+
+</beans>
