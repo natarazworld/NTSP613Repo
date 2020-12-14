@@ -6,17 +6,10 @@ import com.nt.factory.VehicleFactory;
 public class StrategyDPTest1 {
 
 	public static void main(String[] args) {
-		try {
 		// get Vehicle object (target class obj)
-		Vehicle vehicle=VehicleFactory.getInstance("petrol");
+		Vehicle vehicle=VehicleFactory.getInstance();
 		 //invoke b.method
 		vehicle.journey("hyd", "delhi");
-		}
-		catch(IllegalArgumentException iae) {
-			iae.printStackTrace();
-		}
 		
-
-	}
-
-}
+	}//main
+}//class
