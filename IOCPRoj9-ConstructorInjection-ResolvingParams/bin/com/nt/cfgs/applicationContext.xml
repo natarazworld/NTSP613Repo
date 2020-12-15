@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="st"  class="com.nt.beans.Student">
+      <constructor-arg  value="101" />
+      <constructor-arg  value="ramesh" />
+      <constructor-arg  value="hyd" />
+      <constructor-arg  value="67.88f" />
+  </bean>
+  
+  <bean id="st1"  class="com.nt.beans.Student">
+      <constructor-arg  value="102" />
+      <constructor-arg  value="ravi" />
+      <constructor-arg  value="hyd" />
+  </bean>
+  
+  <bean id="st2"  class="com.nt.beans.Student">
+      <constructor-arg  value="103" />
+      <constructor-arg  value="ravi" />
+  </bean>
+  
+  <bean id="mk"  class="com.nt.beans.Marks">
+      <constructor-arg index="2" value="90"/>
+      <constructor-arg index="0" value="80"/>
+      <constructor-arg index="1"  value="70"/>
+  </bean>
+  
+  <bean id="per" class="com.nt.beans.Person">
+      <constructor-arg type="long"  value="989898987654353"/>
+      <constructor-arg type="int"  value="1001"/>
+      <constructor-arg type="java.lang.String"  value="ramesh"/>
+  </bean>
+  
+  
+
+</beans>

@@ -10,7 +10,7 @@
    
    <!-- Target class cfg -->
    <bean id="vehicle"  class="com.nt.comps.Vehicle">
-      <property name="engg"  ref="cngEngine"/>
+          <constructor-arg  name="engg" ref="cngEngine"/>
    </bean>
 
 </beans>

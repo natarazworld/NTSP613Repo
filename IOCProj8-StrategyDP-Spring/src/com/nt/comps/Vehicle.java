@@ -4,7 +4,18 @@ package com.nt.comps;
 public final class Vehicle {
 	private IEngine engg;  //HAS-A property /composition
 	
+	public Vehicle() {
+		System.out.println("Vehicle:: 0-param construtor");
+	}
+	
+	public Vehicle(IEngine engg) {
+		this.engg=engg;
+		System.out.println("Vehicle::1-param construtor");
+	}
+	
+	
 	public  void setEngg(IEngine engg) {
+		System.out.println("Vehicle.setEngg(-)");
 		this.engg=engg;
 	}
 	
