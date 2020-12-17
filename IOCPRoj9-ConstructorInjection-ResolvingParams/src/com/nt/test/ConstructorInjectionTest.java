@@ -3,6 +3,7 @@ package com.nt.test;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 
+import com.nt.beans.Customer;
 import com.nt.beans.Marks;
 import com.nt.beans.Person;
 import com.nt.beans.Student;
@@ -31,6 +32,9 @@ public class ConstructorInjectionTest {
 		System.out.println("---------------------------------");
 		Person per=factory.getBean("per",Person.class);
 		System.out.println(per);
+		System.out.println("---------------------------------");
+		Customer cust=factory.getBean("cust",Customer.class);
+		System.out.println(cust);
 		
 	}
 
