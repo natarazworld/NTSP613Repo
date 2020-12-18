@@ -35,8 +35,8 @@
   </bean>
   
   <bean id="cust"  class="com.nt.beans.Customer">
-     <constructor-arg name="cno" value="1001"/>
-     <constructor-arg name="billAmt" value="9090"/>  
+        <property name="cno" value="1002"/>
+        <property name="cname" value="rajesh"/>  
   </bean>
   
   

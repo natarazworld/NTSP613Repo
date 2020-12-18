@@ -7,7 +7,11 @@ public class Customer {
 	private String cadd;
 	private float billAmt;
 	
-	/*public void setCno(int cno) {
+	public Customer() {
+		
+	}
+	
+	public void setCno(int cno) {
 		this.cno = cno;
 	}
 	
@@ -21,7 +25,7 @@ public class Customer {
 	
 	public void setBillAmt(float billAmt) {
 		this.billAmt = billAmt;
-	}*/
+	}
 
 	public Customer(int cno, String cname, String cadd, float billAmt) {
 		System.out.println("Customer:: 4-param constructor");
