@@ -1,0 +1,12 @@
+CREATE TABLE "SYSTEM"."LAYERED_CUSTOMER" 
+   (	"CNO" NUMBER(10,0), 
+	"CNAME" VARCHAR2(20 BYTE), 
+	"CADD" VARCHAR2(20 BYTE), 
+	"PAMT" FLOAT(10), 
+	"RATE" FLOAT(10), 
+	"TIME" FLOAT(10), 
+	"INTRAMT" FLOAT(10))
+	--------------------------------------------------------------------------------
+	CREATE SEQUENCE  "SYSTEM"."CUSTNO_SEQ"  MINVALUE 1 MAXVALUE 10000 INCREMENT BY 1 START WITH 1
+	
+	
