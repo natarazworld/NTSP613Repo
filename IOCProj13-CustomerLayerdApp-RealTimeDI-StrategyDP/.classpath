@@ -17,5 +17,6 @@
 	<classpathentry kind="lib" path="G:/Spring5.2.7Soft/spring-framework-5.2.7.RELEASE/libs/spring-tx-5.2.7.RELEASE.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Nareshit/Downloads/commons-logging-1.2.jar"/>
 	<classpathentry kind="lib" path="C:/oraclexe/app/oracle/product/11.2.0/server/jdbc/lib/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nareshit/Downloads/mysql-connector-java-8.0.22 (1).jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -8,11 +8,11 @@ import javax.sql.DataSource;
 import com.nt.bo.CustomerBO;
 
 
-public final class CustomerDAOImpl implements ICustomerDAO {
-	private static  final String  INSERT_CUSTOMER_QUERY="INSERT INTO LAYERED_CUSTOMER VALUES(CUSTNO_SEQ.NEXTVAL,?,?,?,?,?,?)"; 
+public final class MySQLCustomerDAOImpl implements ICustomerDAO {
+	private static  final String  INSERT_CUSTOMER_QUERY="INSERT INTO LAYERED_CUSTOMER(CNAME,CADD,PAMT,TIME,RATE,INTRAMT) VALUES(?,?,?,?,?,?)"; 
 	private DataSource ds;
 	
-	public CustomerDAOImpl(DataSource ds) {
+	public MySQLCustomerDAOImpl(DataSource ds) {
 		this.ds = ds;
 	}
 
@@ -36,6 +36,5 @@ public final class CustomerDAOImpl implements ICustomerDAO {
 		 ps.close();
 		 con.close(); //releases the jdbc con object back to jdbc con pool
 		return count;
-	}
-
-}
+	}//method
+}//class
