@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--  Spring beans cfg -->
+    <bean id="dobDt"  class="java.util.Date">
+           <constructor-arg name="year" value="85"/>
+           <constructor-arg name="month" value="11"/>
+           <constructor-arg name="date" value="10"/>
+    </bean>
+    <bean id="sysDate"  class="java.util.Date"/>
+        <bean id="coDate"  class="java.util.Date">
+            <constructor-arg name="year" value="100"/>
+           <constructor-arg name="month" value="8"/>
+           <constructor-arg name="date" value="15"/>
+        </bean>
+        
+        <bean id="clg"  class="com.nt.beans.College">
+            <property name="favStudents">
+               <array>
+                  <value>raja</value>
+                  <value>rajesh</value>
+                  <value>rani</value>
+                  <value>raja</value>
+               </array>
+            </property>
+            <property name="impDates">
+             <list>
+                   <ref bean="dobDt"/>
+                   <ref bean="coDate"/>
+                   <ref bean="sysDate"/>
+               </list>
+            </property>
+        </bean>
+        
+        <!-- Student bean cfg -->
+        <bean id="stud"  class="com.nt.beans.Student">
+            <property name="marks">
+               <list>
+                   <value>89</value>
+                   <value>30</value>
+                   <value>60</value>
+               </list>
+            </property>
+            <property name="impDates">
+              <list>
+                 <ref bean="coDate"/>
+                 <ref bean="dobDt"/>
+                 <ref bean="sysDate"/>
+                 </list>
+            </property>
+        </bean>
+        
+        <!-- FacultyInfo cfg -->
+         <bean id="info"  class="com.nt.beans.FacultyInfo">
+             <property name="phoneNumbers">
+                 <set  value-type="java.lang.String">
+                    <value>46666456641</value>
+                    <value>15646456641</value>
+                    <value>25646456641</value>
+                 </set>
+             </property>
+             <property name="impDates">
+                    <set value-type="java.util.Date">
+                       <ref bean="dobDt"/>
+                       <ref bean="coDate"/>
+                       <ref bean="sysDate"/>
+                    </set>
+             </property>
+         </bean>
+         
+         <!-- FruitStore Cfg-->
+         <bean id="store" class="com.nt.beans.FruitStore">
+              <constructor-arg name="fruitsInfo">
+                  <map key-type="java.lang.String"  value-type="java.lang.Float">
+                       <entry>
+                           <key><value>banana</value></key>
+                           <value>100.5f</value>
+                       </entry>
+                       <entry key="grapes" value="300"/>
+                       <entry>
+                          <key><value>mango</value></key>
+                          <value>500</value>
+                       </entry>
+                  </map>
+              </constructor-arg>
+              <constructor-arg name="impDates">
+                  <map  key-type="java.lang.String"  value-type="java.util.Date">
+                     <entry>  <!-- element1 -->
+                          <key><value>birthDate</value></key>  <!--  key -->
+                          <ref bean="dobDt"/>  <!-- value -->
+                     </entry>  <!-- element2-->
+                     <entry key="openingDate" value-ref="coDate"/>   <!--  key      value -->
+                     <entry key="today"  value-ref="sysDate"/>   <!--  key      value -->
+                  </map>
+              </constructor-arg>
+         </bean>
+         
+         <!-- Cfg  CourseInfo details -->
+          <bean id="course" class="com.nt.beans.CourseInfo">
+              <constructor-arg>
+                   <props>
+                       <prop key="hk">CoreJAva</prop>
+                       <prop key="venkatesh">CoreJAva</prop>
+                       <prop key="murali">Oracle</prop>
+                   </props>
+              </constructor-arg>
+           </bean>
+</beans>
