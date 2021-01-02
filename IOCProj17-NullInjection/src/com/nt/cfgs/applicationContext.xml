@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+  <bean id="rajaDOB" class="java.util.Date">
+      <property name="year" value="90"/>
+      <property name="month" value="10"/>
+      <property name="date" value="30"/>
+  </bean>
+  
+  <bean id="rameshDOB" class="java.util.Date">
+      <property name="year" value="85"/>
+      <property name="month" value="10"/>
+      <property name="date" value="23"/>
+  </bean>
+  
+  <bean id="rajaDOM" class="java.util.Date">
+      <property name="year" value="115"/>
+      <property name="month" value="9"/>
+      <property name="date" value="13"/>
+  </bean>
+  
+  <bean id="rajaDOJ" class="java.util.Date">
+      <property name="year" value="113"/>
+      <property name="month" value="7"/>
+      <property name="date" value="12"/>
+  </bean> 
+   
+   
+
+  <!-- Spring bean cfg1 -->
+  <bean id="rajaInfo"  class="com.nt.beans.PersonalInfo">
+        <constructor-arg name="pname" value="raja"/>
+        <constructor-arg name="paddrs" value="hyd"/>
+        <constructor-arg name="dob"  ref="rajaDOB"/>
+        <constructor-arg name="dom"  ref="rajaDOM"/>
+        <constructor-arg name="doj"  ref="rajaDOJ"/>
+  </bean>
+  
+  
+   <!-- Spring bean cfg2 -->
+  <bean id="rameshInfo"  class="com.nt.beans.PersonalInfo">
+        <constructor-arg name="pname" value="ramesh"/>
+        <constructor-arg name="paddrs" value="vizag"/>
+        <constructor-arg name="dob"  ref="rameshDOB"/>
+        <constructor-arg name="doj"><null/></constructor-arg>   <!-- null Injection -->
+        <constructor-arg name="dom"><null/></constructor-arg>  <!--  null Injection -->
+  </bean>
+  
+   <!-- Spring bean cfg2 -->
+  <bean id="anilInfo"  class="com.nt.beans.PersonalInfo">
+        <constructor-arg name="pname" value="anil"/>
+        <constructor-arg name="paddrs" value="delhi"/>
+        <constructor-arg name="dob"><null/></constructor-arg>  <!-- null Injection -->
+        <constructor-arg name="doj"><null/></constructor-arg>   <!-- null Injection -->
+        <constructor-arg name="dom"><null/></constructor-arg>  <!--  null Injection -->
+  </bean>
+
+</beans>

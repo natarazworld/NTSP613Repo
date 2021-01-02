@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+  <!-- using static factory method and returing relavent class obj -->
+  <bean id="cal"  class="java.util.Calendar" factory-method="getInstance"/>  <!-- calls Calendar.getInstance() -->
+  
+  <!-- using static factory method and returing its own class obj -->
+  <bean id="clazz"  class="java.lang.Class" factory-method="forName">  <!-- calls Class.forName("java.util.Date") -->
+      <constructor-arg value="java.util.Date"/>  <!-- Supplied 1st arg value of Class.forName(-) -->
+  </bean>
+  
+  <!-- using static factory method and returing different class obj -->
+  <bean id="props"  class="java.lang.System"  factory-method="getProperties"/> <!-- calls System.getProperties() -->
+  <!--   ***************************************  -->
+  <!-- using instance factory method and returing its own class obj -->
+  <bean id="s1"  class="java.lang.String">
+     <constructor-arg value="hello"/>
+  </bean>
+  <bean id="s2"  factory-bean="s1" factory-method="concat">  <!-- s1.concat("123") -->
+        <constructor-arg value="123"/>
+  </bean>
+  
+  <!-- using imstance factory method and returing different class obj -->
+  <bean id="sb"  class="java.lang.StringBuffer">
+     <constructor-arg value="how are u?"/>
+  </bean>
+  <bean id="s3"  factory-bean="sb"  factory-method="substring">  <!-- calls sb.substring(0,3) -->
+      <constructor-arg value="0"/>
+      <constructor-arg value="3"/>
+  </bean>
+  
+  <!-- using imstance factory method and returing relavent class obj -->
+   <bean id="al"  class="java.util.ArrayList"/>
+   
+   <bean id="it"   factory-bean="al"  factory-method="iterator"/>
+
+
+</beans>
