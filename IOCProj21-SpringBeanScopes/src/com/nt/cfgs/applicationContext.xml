@@ -4,5 +4,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="wmg"  class="com.nt.beans.WishMessageGenerator"/>
+    <bean id="wmg1"  class="com.nt.beans.WishMessageGenerator"/>
+    
+    <bean id="p1"  class="com.nt.beans.Printer"  scope="singleton"  factory-method="getInstance"/>
+    <bean id="p2"  class="com.nt.beans.Printer"  scope="singleton" factory-method="getInstance"/>
 
 </beans>
