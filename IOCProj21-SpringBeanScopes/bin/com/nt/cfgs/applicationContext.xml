@@ -3,10 +3,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="wmg"  class="com.nt.beans.WishMessageGenerator"/>
-    <bean id="wmg1"  class="com.nt.beans.WishMessageGenerator"/>
+    <bean id="wmg"  class="com.nt.beans.WishMessageGenerator"  scope="request"/>
     
-    <bean id="p1"  class="com.nt.beans.Printer"  scope="singleton"  factory-method="getInstance"/>
-    <bean id="p2"  class="com.nt.beans.Printer"  scope="singleton" factory-method="getInstance"/>
+    <bean id="p1"  class="com.nt.beans.Printer"  scope="prototype"  factory-method="getInstance"/>
 
 </beans>
