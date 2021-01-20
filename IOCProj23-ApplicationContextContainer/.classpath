@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="com/nt/cfgs/" kind="src" path="src"/>
+	<classpathentry kind="src" path="src/com/nt/cfgs"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-13">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Nareshit/Downloads/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="G:/spring3.2.9Soft/spring-framework-3.2.9.RELEASE/libs/spring-aop-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="G:/spring3.2.9Soft/spring-framework-3.2.9.RELEASE/libs/spring-aspects-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="G:/spring3.2.9Soft/spring-framework-3.2.9.RELEASE/libs/spring-beans-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="G:/spring3.2.9Soft/spring-framework-3.2.9.RELEASE/libs/spring-context-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="G:/spring3.2.9Soft/spring-framework-3.2.9.RELEASE/libs/spring-context-support-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="G:/spring3.2.9Soft/spring-framework-3.2.9.RELEASE/libs/spring-core-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="G:/spring3.2.9Soft/spring-framework-3.2.9.RELEASE/libs/spring-expression-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
