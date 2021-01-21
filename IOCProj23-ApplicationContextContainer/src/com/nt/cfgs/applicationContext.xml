@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans  xmlns="http://www.springframework.org/schema/beans"
+<beans   xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	https://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
    <!-- Dependent class cfg -->
-   <bean id="engg" class="com.nt.comps.DieselEngine"  scope="prototype"  />
-   <bean id="pEngine" class="com.nt.comps.PetrolEngine"   />
-   <bean id="cngEngine" class="com.nt.comps.CNGEngine"  primary="true"  scope="prototype" />
+   <bean id="engg" class="com.nt.comps.DieselEngine"  scope="prototype"   lazy-init="false" />
+   <bean id="pEngine" class="com.nt.comps.PetrolEngine"   scope="singleton" lazy-init="true"  />
+   <bean id="cngEngine" class="com.nt.comps.CNGEngine"  primary="true"  scope="prototype" lazy-init="true" />
    <!-- Target class cfg -->
-   <bean id="vehicle"  class="com.nt.comps.Vehicle"  >
+   <bean id="vehicle"  class="com.nt.comps.Vehicle" scope="singleton" >
         <constructor-arg  ref="pEngine"/>
        <property name="type" value="four-wheeler"/>
    </bean>

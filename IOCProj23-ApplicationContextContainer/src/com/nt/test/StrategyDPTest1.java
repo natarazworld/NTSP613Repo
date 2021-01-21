@@ -4,6 +4,7 @@ import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.nt.comps.PetrolEngine;
 import com.nt.comps.Vehicle;
 
 public class StrategyDPTest1 {
@@ -14,7 +15,6 @@ public class StrategyDPTest1 {
 		//ApplicationContext ctx=new ClassPathXmlApplicationContext("com/nt/cfgs/applicationContext.xml");
 		ClassPathXmlApplicationContext ctx=new ClassPathXmlApplicationContext("applicationContext.xml");
 		System.out.println("...............");
-		
 		/*//create IOC container
 				DefaultListableBeanFactory factory=new DefaultListableBeanFactory();
 				//create XmlBeanDefinitationReader object
