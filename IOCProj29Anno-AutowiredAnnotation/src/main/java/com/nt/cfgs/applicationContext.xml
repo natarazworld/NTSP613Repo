@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+  <!-- Dependent Spring beans cfg -->
+    <!-- <bean id="dtdc"  class="com.nt.beans.DTDC" >
+       <qualifier value="cr1"/>
+    </bean>
+     <bean id="bDart" class="com.nt.beans.BlueDart" >
+          <qualifier value="cr2"/>
+     </bean>
+    <bean id="dhl"  class="com.nt.beans.DHL"  >
+          <qualifier value="cr3"/>
+    </bean>  -->
+    
+     <bean id="dtdc"  class="com.nt.beans.DTDC" />
+     <bean id="bDart" class="com.nt.beans.BlueDart" />
+    <bean id="dhl"  class="com.nt.beans.DHL" />
+    
+    <!-- Target Spring Beans cfgs -->
+     <bean id="fpkt"  class="com.nt.beans.Flipkart"/>
+     
+     <!-- @AutoWired's  BeanPostProcessor class -->
+     <!-- <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/> -->
+      <context:annotation-config/>
+
+</beans>

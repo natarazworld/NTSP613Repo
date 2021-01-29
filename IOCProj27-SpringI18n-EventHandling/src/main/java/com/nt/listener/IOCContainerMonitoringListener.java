@@ -2,8 +2,10 @@ package com.nt.listener;
 
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
+
 
 public class IOCContainerMonitoringListener  implements ApplicationListener {
     private long start,end;
