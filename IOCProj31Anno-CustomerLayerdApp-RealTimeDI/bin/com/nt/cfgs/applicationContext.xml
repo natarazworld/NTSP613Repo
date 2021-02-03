@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <!-- DriverManager DataSource Cfg -->
+  <bean id="drdsOra" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+     <!--   <property name="driverClassName"  value="oracle.jdbc.driver.OracleDriver"/> -->
+       <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+       <property name="username" value="system"/>
+       <property name="password" value="manager"/>
+  </bean>
+  
+   
+  
+  <!-- Cfg DAO classes -->
+  <bean id="custDAOOracle"  class="com.nt.dao.OracleCustomerDAOImpl">
+      <constructor-arg name="ds" ref="drdsOra"/>
+  </bean>
+  
+  <bean id="custDAOMysql"  class="com.nt.dao.MySQLCustomerDAOImpl">
+      <constructor-arg name="ds" ref="drdsMySQL"/>
+  </bean>
+  
+  
+  <!-- Service class cfg -->
+   <bean id="custService"  class="com.nt.service.CustomerMgmtServiceImpl">
+       <constructor-arg name="dao"  ref="custDAOOracle"/>
+      <!--  <constructor-arg name="dao"  ref="custDAOMysql"/> -->
+   </bean>
+   
+   <!-- Controller cfg cfg -->
+   <bean id="controller"  class="com.nt.controller.BankController">
+      <constructor-arg name="service"  ref="custService"/>
+   </bean>
+
+</beans>
