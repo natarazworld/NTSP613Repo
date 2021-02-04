@@ -14,7 +14,7 @@ public final class CustomerMgmtServiceImpl implements ICustomerMgmtService {
 	
 	@Autowired
 	//@Qualifier("oracleCustDAO")
-	@Qualifier("mysqlCustDAO")
+	@Qualifier("selectedDAO")
 	private  ICustomerDAO dao;
 	
 

@@ -7,21 +7,22 @@
 
   <!-- DriverManager DataSource Cfg -->
   <bean id="drdsOra" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-       <!-- <property name="driverClassName"  value="oracle.jdbc.driver.OracleDriver"/> 
+       <property name="driverClassName"  value="oracle.jdbc.driver.OracleDriver"/> 
        <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
        <property name="username" value="system"/>
-       <property name="password" value="manager"/> -->
-        <property name="driverClassName"  value="com.mysql.cj.jdbc.Driver"/> 
+       <property name="password" value="manager"/>
+     <!--    <property name="driverClassName"  value="com.mysql.cj.jdbc.Driver"/> 
        <property name="url" value="jdbc:mysql:///ntsp613db"/>
        <property name="username" value="root"/>
-       <property name="password" value="root"/>
+       <property name="password" value="root"/> -->
        
   </bean>
   
   <!-- <context:component-scan base-package="com.nt.service,com.nt.dao,com.nt.controller"/> -->
    <context:component-scan base-package="com.nt"/>
-   
-  
+   <!-- <context:property-placeholder  location="com/nt/commons/myfile.properties"/> 
+   <alias name="${dao.active.id}" alias="selectedDAO"/>
+   -->
    
 
 </beans>
