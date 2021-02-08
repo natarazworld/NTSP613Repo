@@ -1,11 +1,9 @@
+//VoteElgibilityChecking.java
 package com.nt.beans;
 
 import java.util.Date;
 
 import lombok.Setter;
-
-
-
 public class VoteElgibilityChecking {
     //@Setter	
 	private String name;

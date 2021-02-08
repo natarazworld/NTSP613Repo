@@ -1,3 +1,4 @@
+// SpringBeanLifeCycleTest.java
 package com.nt.test;
 
 import org.springframework.context.ApplicationContext;

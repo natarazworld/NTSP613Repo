@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-  <bean id="voting"  class="com.nt.beans.VoteElgibilityChecking"  scope="prototype"    init-method="myInit"  destroy-method="myDestroy" >
+  <bean id="voting"  class="com.nt.beans.VoteElgibilityChecking"   init-method="myInit"  destroy-method="myDestroy" >
       <property name="name" value="raja"/>
        <property name="age" value="20"/> 
   </bean>
