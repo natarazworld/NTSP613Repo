@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+    <!-- Spring beans cfgs -->
+    <bean id="bat"  class="com.nt.beans.CricketBat"  lazy-init="true"/>
+    
+    <bean id="cricketer" class="com.nt.beans.Cricketer"  lazy-init="true">
+        <property name="name"  value="kohli"/>
+        <property name="jersyNo"  value="18"/>
+     <!--    <property name="beanId" value="abc"/> -->
+         <property name="beanId" >
+            <idref bean="abc"/>
+        </property> 
+    </bean>
+
+</beans>
