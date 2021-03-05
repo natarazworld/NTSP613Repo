@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	                         https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+   <bean id="pInfo"  class="com.nt.beans.PersonalInfo">
+       <property name="name"   value="raja"/>
+       <property name="age" value="30.0f"/>
+       <property name="doj"  value="10/23/2015"/>  <!-- MM/dd/yyyy -->
+       <property name="adhaarNo" value="53243255535554"/>
+       <property name="favChar"  value="C"/>
+       <property name="favLocale"  value="fr-FR"/>
+       <property name="favClass"  value="java.lang.System"/>
+       <property name="fbUrl"  value="https://www.facebook.com/groups/388095825162910/files"/>
+       <property name="fileLocation"  value="d:/abc/xyz/photo.gif"/>
+       <property name="moles" value="A mole on chin, A mole on right hand"/>
+       <property name="luckyNumber" value="9"/>
+      <property name="academicPercentages" value="ABC"/>  <!-- takes ABC unicode numbers  and perforsm conversion -->
+       <property name="props" value="name=raja,age=30,addrs=hyd"/>
+   </bean>	                         
+
+
+</beans>

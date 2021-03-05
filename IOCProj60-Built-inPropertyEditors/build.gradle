@@ -1,0 +1,18 @@
+
+plugins {
+    id 'application'
+}
+
+sourceCompatibility = '14.0.1'
+targetCompatibility = '14.0.1'
+
+repositories {
+//    jcenter()
+  mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.springframework/spring-context-support
+implementation group: 'org.springframework', name: 'spring-context-support', version: '5.3.4'
+    
+}
