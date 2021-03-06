@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+    <!--  <bean id="iad" class="com.nt.beans.IntrestAmountDetails">
+         <property name="pamt" value="10000"/>
+         <property name="rate" value="2"/>
+         <property name="time" value="10"/>
+     </bean>
+     
+     <bean id="blic" class="com.nt.beans.BankLoanIntrestCalculator">
+         <property name="details"  ref="iad"/>
+     </bean> -->
+     
+     <bean id="blic" class="com.nt.beans.BankLoanIntrestCalculator">
+         <property name="details"  value="100000,2,10"/>
+     </bean>
+
+</beans>

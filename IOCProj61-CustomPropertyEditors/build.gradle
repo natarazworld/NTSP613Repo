@@ -1,0 +1,20 @@
+
+plugins {
+    // Apply the java-library plugin to add support for Java Library
+    id 'application'
+}
+
+sourceCompatibility="14.0.1"
+targetCompatibility="14.0.1"
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+// https://mvnrepository.com/artifact/org.springframework/spring-context-support
+implementation group: 'org.springframework', name: 'spring-context-support', version: '5.3.4'
+// https://mvnrepository.com/artifact/org.projectlombok/lombok
+compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.18'
+   
+}
