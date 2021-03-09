@@ -16,5 +16,14 @@
      <bean id="blic" class="com.nt.beans.BankLoanIntrestCalculator">
          <property name="details"  value="100000,2,10"/>
      </bean>
+     
+     <!-- CustomProeprtyEditor Registration  using CustomEditorconfigurer -->
+       <bean  id="configurer"  class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+            <property name="customEditors">
+               <map>
+                   <entry  key="com.nt.beans.IntrestAmountDetails" value="com.nt.editor.IntrestAmountDetailsEditor"/>
+               </map>
+            </property>
+       </bean>
 
 </beans>

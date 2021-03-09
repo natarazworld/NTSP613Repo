@@ -6,7 +6,7 @@
    <bean id="pInfo"  class="com.nt.beans.PersonalInfo">
        <property name="name"   value="raja"/>
        <property name="age" value="30.0f"/>
-       <property name="doj"  value="10/23/2015"/>  <!-- MM/dd/yyyy -->
+    <!--    <property name="doj"  value="10/23/2015"/>  MM/dd/yyyy -->
        <property name="adhaarNo" value="53243255535554"/>
        <property name="favChar"  value="C"/>
        <property name="favLocale"  value="fr-FR"/>
@@ -17,7 +17,27 @@
        <property name="luckyNumber" value="9"/>
       <property name="academicPercentages" value="ABC"/>  <!-- takes ABC unicode numbers  and perforsm conversion -->
        <property name="props" value="name=raja,age=30,addrs=hyd"/>
+       <property name="bundle" value="com/nt/commons/jdbc"/>
+       <property name="dom" value="2017-10-20"/>
    </bean>	                         
+   
+   
+  
+   
+   
+     <!-- Register ResourceBundlePropertyEditor  with  IOC container for java.util.ReosurceBundle type property -->
+       <bean  id="configurer" class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+           <property name="customEditors">
+              <map>
+                 <entry key="java.util.ResourceBundle" value="org.springframework.beans.propertyeditors.ResourceBundleEditor"/>
+              </map>
+           </property>
+           <property name="propertyEditorRegistrars">
+               <list>
+                  <bean class="com.nt.registrar.MyPERegistrar"/>
+               </list>
+           </property>
+       </bean>
 
 
 </beans>
