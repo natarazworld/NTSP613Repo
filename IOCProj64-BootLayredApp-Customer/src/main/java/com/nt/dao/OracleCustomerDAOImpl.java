@@ -22,7 +22,7 @@ public  class OracleCustomerDAOImpl implements ICustomerDAO {
 	
 	@Override
 	public  int insert(CustomerBO bo) throws Exception {
-		
+		 System.out.println("Ds object class name::"+ds.getClass());
 		//get pooled jdbc con object
 		Connection con=ds.getConnection();
 		//create PreparedStatement object
