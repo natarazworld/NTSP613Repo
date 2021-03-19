@@ -1,0 +1,29 @@
+info:
+  per:
+    addrs:
+      doorNo: 1-2-3/11
+      locality: hyd
+      street: RK streek
+    fav-fruits:
+      grape: green
+    favFruits:
+      apple: green
+      banana: yellow
+    id: 101
+    idCards:
+      adharCard: 555435353
+      passportNo: 54543535
+      voterCard: 54543535
+    marks:
+    - 90
+    - 30
+    - 60
+    name: raja
+    nickNames:
+    - king
+    - maharaja
+    - prince
+    phoneNumbers:
+    - 644664456
+    - 5545353
+    - 54353535
