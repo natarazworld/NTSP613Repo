@@ -24,6 +24,7 @@ public class Person {
 	 private Map<String,Long> idCards;
 	 private Properties favFruits;
 	 
+	 private  Company company;
 	
 
 }

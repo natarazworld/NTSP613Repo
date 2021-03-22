@@ -1,9 +1,10 @@
 info:
   per:
-    addrs:
-      doorNo: 1-2-3/11
-      locality: hyd
-      street: RK streek
+    #HAS-A property
+    company: 
+      location: hyd
+      size: 100
+      name: HCL Technologies
     fav-fruits:
       grape: green
     favFruits:
