@@ -1,0 +1,26 @@
+plugins {
+    id 'application'
+}
+
+sourceCompatibility='14.0.1'
+targetCompatibility='14.0.1'
+
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+   // https://mvnrepository.com/artifact/org.springframework/spring-context-support
+implementation group: 'org.springframework', name: 'spring-context-support', version: '5.3.5'
+// https://mvnrepository.com/artifact/org.springframework/spring-jdbc
+implementation group: 'org.springframework', name: 'spring-jdbc', version: '5.3.5'
+
+   // https://mvnrepository.com/artifact/org.projectlombok/lombok
+compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.18'
+   // https://mvnrepository.com/artifact/com.oracle.ojdbc/ojdbc8
+implementation group: 'com.oracle.ojdbc', name: 'ojdbc8', version: '19.3.0.0'
+   // https://mvnrepository.com/artifact/com.zaxxer/HikariCP
+implementation group: 'com.zaxxer', name: 'HikariCP', version: '4.0.3'
+   
+}
