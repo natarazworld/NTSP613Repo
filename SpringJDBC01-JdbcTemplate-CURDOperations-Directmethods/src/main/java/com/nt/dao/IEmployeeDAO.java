@@ -12,4 +12,7 @@ public interface IEmployeeDAO {
     public  Map<String,Object> getEmployeeDetailsByEno(int eno);
     public List<Map<String,Object>> getEmployeeDetailsByDesgs(String desg1,String desg2,String desg3);
     public SqlRowSet  getEmployeeDetailsBySalaryRange(float startSalary,float endSalary);
+    public  int  insertEmployee(String ename,String desg,float salary);
+    public  int  updateEmployeeSalary(int eno,float newSalary);
+    public   int  deleteEmployeeBySalaryRange(float startSalary,float endSalary);
 }

@@ -18,7 +18,7 @@ public class JdbcTemplateDirectMethodsTest {
 		//get Target class object
 		IEmployeeMgmtService service=ctx.getBean("empService",IEmployeeMgmtService.class);
 		
-		//invoke methods
+		/*//invoke methods
 		try {
 		System.out.println("EmpsCount::"+service.fetchEmpsCount());
 		}
@@ -70,8 +70,33 @@ public class JdbcTemplateDirectMethodsTest {
 		}
 		catch(DataAccessException dae) {
 			dae.printStackTrace();
+		}*/
+		/*System.out.println("===============================");
+		try {
+			System.out.println(service.registerEmployee("raja", "CLERK",90000.0f));
 		}
+		catch(DataAccessException dae) {
+			dae.printStackTrace();
+		}*/
 		
+		/*System.out.println("===============================");
+		try {
+			System.out.println("Before hike salary"+service.fetchEmpSalaryByEno(7499));
+			System.out.println(service.hikeEmployeeSalary(7499, 10.0f));
+			System.out.println("After hike salary"+service.fetchEmpSalaryByEno(7499));
+		}
+		catch(DataAccessException dae) {
+			dae.printStackTrace();
+		}
+		*/
+		
+		System.out.println("===============================");
+		try {
+			System.out.println(service.fireEmployeesBySalaryRange(4000.0f, 8000.0f));
+		}
+		catch(DataAccessException dae) {
+			dae.printStackTrace();
+		}
 
 		//close IOC container
 		((AbstractApplicationContext) ctx).close();

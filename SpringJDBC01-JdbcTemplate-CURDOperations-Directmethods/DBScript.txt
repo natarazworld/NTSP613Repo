@@ -1,0 +1,3 @@
+CREATE SEQUENCE  "SYSTEM"."EMPNO_SEQ1"  MINVALUE 1 MAXVALUE 10000 INCREMENT BY 1 
+                                                                                                        START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
+

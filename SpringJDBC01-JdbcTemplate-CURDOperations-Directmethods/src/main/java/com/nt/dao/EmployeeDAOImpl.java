@@ -13,6 +13,10 @@ public class EmployeeDAOImpl implements IEmployeeDAO {
 	private static final String GET_EMP_DETTAILS_BY_EMPNO="SELECT EMPNO,ENAME,JOB,SAL FROM EMP WHERE EMPNO=?";
 	private static final String GET_EMP_DETTAILS_BY_DESGS="SELECT EMPNO,ENAME,JOB,SAL FROM EMP WHERE JOB IN(?,?,?) ORDER BY JOB";
 	private static final String GET_EMP_DETTAILS_BY_SALRANGE="SELECT EMPNO,ENAME,JOB,SAL FROM EMP WHERE SAL>=? AND SAL<=?";
+	private static final String INSERT_EMP_QUERY="INSERT INTO EMP(EMPNO,ENAME,JOB,SAL) VALUES(EMPNO_SEQ1.NEXTVAL,?,?,?)";
+	private static final String UPDATE_EMP_SALARY_QUERY="UPDATE EMP SET SAL=? WHERE EMPNO=?";
+	private static final String DELETE_EMPS_BY_SALARY_RANGE="DELETE FROM EMP WHERE SAL>=? and SAL<=?";
+	
 	private JdbcTemplate jt;
 	
 	public EmployeeDAOImpl(JdbcTemplate jt) {
@@ -49,7 +53,23 @@ public class EmployeeDAOImpl implements IEmployeeDAO {
 	   SqlRowSet rowset=jt.queryForRowSet(GET_EMP_DETTAILS_BY_SALRANGE, startSalary,endSalary);
 		return rowset;
 	}
-	
-	
 
-}
+	@Override
+	public int insertEmployee(String ename, String desg, float salary) {
+		int count=jt.update(INSERT_EMP_QUERY,ename,desg,salary);
+		return count;
+	}
+	
+	@Override
+	public int updateEmployeeSalary(int eno, float newSalary) {
+		int count=jt.update(UPDATE_EMP_SALARY_QUERY,newSalary,eno);
+		return count;
+	}
+	
+	@Override
+	public int deleteEmployeeBySalaryRange(float startSalary, float endSalary) {
+	   int count=jt.update(DELETE_EMPS_BY_SALARY_RANGE,startSalary,endSalary);
+		return count;
+	}
+
+}//class
