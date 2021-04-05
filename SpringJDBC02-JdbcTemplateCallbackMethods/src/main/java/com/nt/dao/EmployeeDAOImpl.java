@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.nt.bo.EmployeeBO;
 
-@Repository("empDAO")
+//@Repository("empDAO")
 public class EmployeeDAOImpl implements IEmployeeDAO {
 	private static final String  GET_EMP_BY_ENO="SELECT EMPNO,ENAME,JOB,SAL FROM EMP WHERE EMPNO=?";
 	@Autowired
