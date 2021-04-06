@@ -41,4 +41,11 @@ public class EmployeeDAOImpl implements IEmployeeDAO {
 			return bo;
 		}//mapRow(-,-)
 	}//inner class
+
+
+	@Override
+	public List<EmployeeBO> getEmployeesByDesgs(String desg1, String desg2, String desg3) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }//DAO class
