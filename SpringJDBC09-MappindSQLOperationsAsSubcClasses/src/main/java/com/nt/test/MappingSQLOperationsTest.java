@@ -43,6 +43,14 @@ public class MappingSQLOperationsTest {
 			dae.printStackTrace();
 		}
 		
+		System.out.println("==============================");
+		try {
+			System.out.println(service.modifyFlagColorsByPartyName("white color", "INC"));
+		}
+		catch(DataAccessException dae) {
+			dae.printStackTrace();
+		}
+		
 		//close container
 	    	((AbstractApplicationContext) ctx).close();
 

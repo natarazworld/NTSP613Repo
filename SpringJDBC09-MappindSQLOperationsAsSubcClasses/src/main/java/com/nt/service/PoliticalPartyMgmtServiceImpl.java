@@ -28,4 +28,11 @@ public class PoliticalPartyMgmtServiceImpl implements IPoliticalPartyMgmtService
 		return list;
 	}
 
+	@Override
+	public String modifyFlagColorsByPartyName(String newColors, String partyName) {
+		//use DAO
+		int count=dao.updateFlagColorsByPartyName(partyName, newColors);
+		return count==0?"Party Not found":"PartyFound and flag colors are updated";
+	}
+
 }
