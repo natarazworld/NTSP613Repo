@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/aop
+		  https://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+		
+		<!-- taret class cfg -->
+		<bean id="bankService"  class="com.nt.service.BankService"/>
+		
+		<!-- Dependent calss -->
+		<bean id="pmAdvice" class="com.nt.advice.PerformenceMonitoringAdvice"/>
+		
+	 	<!-- enable AOP cfg -->
+		<aop:config>
+		  <!--     create Pointcut using OGNL expression -->
+		      <aop:pointcut expression="execution(double com.nt.service.BankService.*(..))" id="ptc"/>
+		      <!-- make spring bean class as spectjAOP aspect class -->
+		      <aop:aspect ref="pmAdvice">
+		         <aop:around method="performence"  pointcut-ref="ptc"/>
+		      </aop:aspect>
+		
+		</aop:config> 
+</beans>
