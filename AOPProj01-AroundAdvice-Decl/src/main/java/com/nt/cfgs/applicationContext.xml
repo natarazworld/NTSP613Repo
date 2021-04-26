@@ -10,17 +10,29 @@
 		<!-- taret class cfg -->
 		<bean id="bankService"  class="com.nt.service.BankService"/>
 		
-		<!-- Dependent calss -->
+		<!-- advice classes calss -->
 		<bean id="pmAdvice" class="com.nt.advice.PerformenceMonitoringAdvice"/>
+		<!-- advice classes calss -->
+		<bean id="cacheAdvice" class="com.nt.advice.CachingAdvice"/>
+		
 		
 	 	<!-- enable AOP cfg -->
 		<aop:config>
 		  <!--     create Pointcut using OGNL expression -->
 		      <aop:pointcut expression="execution(double com.nt.service.BankService.*(..))" id="ptc"/>
+		      
 		      <!-- make spring bean class as spectjAOP aspect class -->
-		      <aop:aspect ref="pmAdvice">
+		      <aop:aspect ref="pmAdvice"  order="10">
 		         <aop:around method="performence"  pointcut-ref="ptc"/>
 		      </aop:aspect>
+		      
+		      
+		       <aop:aspect ref="cacheAdvice" order="1">
+		         <aop:around method="caching"  pointcut-ref="ptc"/>
+		      </aop:aspect>
+		      
+		      
+		     
 		
 		</aop:config> 
 </beans>
