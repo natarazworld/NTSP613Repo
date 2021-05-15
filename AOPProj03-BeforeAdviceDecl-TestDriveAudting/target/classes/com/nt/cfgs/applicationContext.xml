@@ -15,8 +15,9 @@
   
   <aop:config>
      <!-- OGNL expresssion representing Pointcut -->
-     <aop:pointcut id="ptc" expression="execution (java.lang.String com.nt.service.CarShowRoom.sellCar(..))" />
-     
+     <!-- <aop:pointcut id="ptc" expression="execution (java.lang.String com.nt.service.CarShowRoom.sellCar(..))" /> -->
+      <aop:pointcut id="ptc" expression="execution (java.lang.String com.nt.service.CarShowRoom.sellCar(..)) and args(custName,carModel,price)" />
+      
      <!-- make spring bean as aspectj aop before advice  -->
      <aop:aspect ref="tdAuditAdvice">
         <aop:before method="testDriving" pointcut-ref="ptc"/>

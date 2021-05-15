@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+  <!-- cfg target class as spring bean -->
+  <bean id="store"  class="com.nt.service.OnlineStore"/>
+  
+  <!-- cfg advice class as spring bean -->
+  <bean id="cuponAdvice"  class="com.nt.advice.DiscountCuponAdvice"/>
+  
+  <!-- enable Aspectj AOP -->
+     <aop:config>
+        <!-- Pointcut expression -->
+        <!-- <aop:pointcut expression="execution (double  com.nt.service.OnlineStore.shopping(..))" id="ptc"/> -->
+        <!-- cfg spring  bean and its  method as  aspectj AOP aspect class and advice method -->
+        <aop:aspect  ref="cuponAdvice">
+             <!-- <aop:after-returning method="generateCupon"  pointcut-ref="ptc"  returning="billAmt"/> -->
+             <aop:after-returning method="generateCupon"  pointcut="execution (double  com.nt.service.OnlineStore.shopping(..))"  returning="billAmt"/>
+        </aop:aspect>
+     
+     </aop:config>
+  
+
+</beans>
