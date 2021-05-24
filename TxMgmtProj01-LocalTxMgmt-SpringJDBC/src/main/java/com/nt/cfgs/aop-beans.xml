@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+   <!--  Cfg TransactionManager as spring bean-->
+   <bean id="dsTxMgmr" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+       <constructor-arg name="dataSource" ref="hkCPDs"/>
+   </bean>
+   <!-- make  TxMgm as  tx advice -->
+   <tx:advice id="txAdvice" transaction-manager="dsTxMgmr">
+       <tx:attributes  >
+           <tx:method name="transferMoney"  propagation="REQUIRED"/>
+       </tx:attributes>
+   </tx:advice>
+   
+   <!-- enable aspectj AOP -->
+    <aop:config>
+        <aop:pointcut expression="execution(java.lang.String com.nt.service.BankMgmtServiceImpl.transferMoney(..))" id="ptc"/>
+         <aop:advisor advice-ref="txAdvice"  pointcut-ref="ptc"/>  <!-- Makes Tx advice as  aspjectj AOP advice -->
+    </aop:config>
+ 
+
+</beans>
