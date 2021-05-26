@@ -13,7 +13,7 @@
    <!-- make  TxMgm as  tx advice -->
    <tx:advice id="txAdvice" transaction-manager="dsTxMgmr">
        <tx:attributes  >
-           <tx:method name="transferMoney"  propagation="REQUIRED"/>
+           <tx:method name="transferMoney"  propagation="REQUIRED"   rollback-for="java.lang.IllegalAccessException"/>
        </tx:attributes>
    </tx:advice>
    

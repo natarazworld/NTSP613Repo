@@ -10,11 +10,22 @@ public class BankMgmtServiceImpl implements IBankMgmtService {
 	}
 
 	@Override
-	public String transferMoney(int srcAcno, int destAcno, double amount) {
-		 int count1=dao.deposite(destAcno, amount);
+	public String transferMoney(int srcAcno, int destAcno, double amount)throws IllegalAccessException {
+		/*try {
+			 Thread.sleep(25000);
+		 }
+		 catch(Exception e) {
+			 e.printStackTrace();
+		 }*/
+		
+		
+		int count1=dao.deposite(destAcno, amount);
 		 int count2=dao.withdraw(srcAcno, amount);
+		 
+		  
 		 if(count1==0 || count2==0)
-			 throw new RuntimeException("Tx rollled back --->Moeny is not transfered");  //must be unchecked exception
+			// throw new RuntimeException("Tx rollled back --->Moeny is not transfered");  //must be unchecked exception
+			 throw new IllegalAccessException("Tx rollled back --->Moeny is not transfered");  //must be unchecked exception
 		 else
 		return " Tx committed ..  Money Transfered";
 	}
