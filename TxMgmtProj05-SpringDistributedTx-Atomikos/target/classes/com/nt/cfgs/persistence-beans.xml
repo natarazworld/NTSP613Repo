@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+	<!--DataSource pointing to Oracle by using its Datasource cfg -->
+	<bean id="oraXADS"
+		class="com.atomikos.jdbc.AtomikosDataSourceBean">
+		<property name="uniqueResourceName" value="oraXA" />
+		<property name="xaDataSourceClassName"
+			value="oracle.jdbc.xa.client.OracleXADataSource" />
+		<property name="xaProperties">
+			<props>
+				<prop key="databaseName">xe</prop>
+				<prop key="user">system</prop>
+				<prop key="password">manager</prop>
+				<prop key="URL">jdbc:oracle:thin:@localhost:1521:xe</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!--DataSource pointing to MySQL by using its Datasource cfg -->
+	<bean id="MySQLXADS"
+		class="com.atomikos.jdbc.AtomikosDataSourceBean">
+		<property name="uniqueResourceName" value="mysqlXA" />
+		<property name="xaDataSourceClassName"		value="com.mysql.cj.jdbc.MysqlXADataSource" />
+		<property name="xaProperties">
+			<props>
+				<prop key="databaseName">NTSP613DB</prop>
+				<prop key="user">root</prop>
+				<prop key="password">root</prop>
+				<prop key="URL">jdbc:mysql:///NTSP613DB</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!--  JdbcTemplate cfg for oracle -->
+	 <bean id="oraTemplate"  class="org.springframework.jdbc.core.JdbcTemplate">
+	     <constructor-arg  name="dataSource"  ref="oraXADS"/>
+	 </bean>
+	 
+	 <!--  JdbcTemplate cfg for mysql-->
+	 <bean id="mysqlTemplate"  class="org.springframework.jdbc.core.JdbcTemplate">
+	     <constructor-arg  name="dataSource"  ref="MySQLXADS"/>
+	 </bean>
+	 
+	 <context:component-scan base-package="com.nt.dao"/>
+	
+	
+
+
+</beans>
