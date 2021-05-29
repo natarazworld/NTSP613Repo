@@ -1,0 +1,97 @@
+{"properties": [
+  {
+    "name": "dtx.aksDs.ora.uniqueResourceName",
+    "type": "java.lang.String",
+    "description": "A description for 'dtx.aksDs.ora.uniqueResourceName'"
+  },
+  {
+    "name": "dtx.aksDs.ora.xaDataSourceClassName",
+    "type": "java.lang.String",
+    "description": "A description for 'dtx.aksDs.ora.xaDataSourceClassName'"
+  },
+  {
+    "name": "dtx.aksDs.ora.xaProperties.databaseName",
+    "type": "java.lang.String",
+    "description": "A description for 'dtx.aksDs.ora.xaProperties.databaseName'"
+  },
+  {
+    "name": "dtx.aksDs.ora.xaProperties.user",
+    "type": "java.lang.String",
+    "description": "A description for 'dtx.aksDs.ora.xaProperties.user'"
+  },
+  {
+    "name": "dtx.aksDs.ora.xaProperties.password",
+    "type": "java.lang.String",
+    "description": "A description for 'dtx.aksDs.ora.xaProperties.password'"
+  },
+  {
+    "name": "dtx.aksDs.ora.xaProperties.URL",
+    "type": "java.lang.String",
+    "description": "A description for 'dtx.aksDs.ora.xaProperties.URL'"
+  },
+  {
+    "name": "dtx.aksDs.ora.maxPoolSize",
+    "type": "java.lang.String",
+    "description": "A description for 'dtx.aksDs.ora.maxPoolSize'"
+  },
+  {
+    "name": "dtx.aksDs.ora.minPoolSize",
+    "type": "java.lang.String",
+    "description": "A description for 'dtx.aksDs.ora.minPoolSize'"
+  },
+  {
+    "name": "dtx.aksDs.ora.maxIdleTime",
+    "type": "java.lang.String",
+    "description": "A description for 'dtx.aksDs.ora.maxIdleTime'"
+  },
+  {
+    "name": "dtx.aksDs.mysql.uniqueResourceName",
+    "type": "java.lang.String",
+    "description": "A description for 'dtx.aksDs.mysql.uniqueResourceName'"
+  },
+  {
+    "name": "dtx.aksDs.mysql.xaDataSourceClassName",
+    "type": "java.lang.String",
+    "description": "A description for 'dtx.aksDs.mysql.xaDataSourceClassName'"
+  },
+  {
+    "name": "dtx.aksDs.mysql.xaProperties.databaseName",
+    "type": "java.lang.String",
+    "description": "A description for 'dtx.aksDs.mysql.xaProperties.databaseName'"
+  },
+  {
+    "name": "dtx.aksDs.mysql.xaProperties.password",
+    "type": "java.lang.String",
+    "description": "A description for 'dtx.aksDs.mysql.xaProperties.password'"
+  },
+  {
+    "name": "dtx.aksDs.mysql.xaProperties.user",
+    "type": "java.lang.String",
+    "description": "A description for 'dtx.aksDs.mysql.xaProperties.user'"
+  },
+  {
+    "name": "dtx.aksDs.mysql.xaProperties.URL",
+    "type": "java.lang.String",
+    "description": "A description for 'dtx.aksDs.mysql.xaProperties.URL'"
+  },
+  {
+    "name": "dtx.aksDs.mysql.maxPoolSize",
+    "type": "java.lang.String",
+    "description": "A description for 'dtx.aksDs.mysql.maxPoolSize'"
+  },
+  {
+    "name": "dtx.aksDs.mysql.minPoolSize",
+    "type": "java.lang.String",
+    "description": "A description for 'dtx.aksDs.mysql.minPoolSize'"
+  },
+  {
+    "name": "dtx.aksDs.mysql.maxIdleTime",
+    "type": "java.lang.String",
+    "description": "A description for 'dtx.aksDs.mysql.maxIdleTime'"
+  },
+  {
+    "name": "dtx.aksds.ora.uniqueResourceName",
+    "type": "java.lang.String",
+    "description": "A description for 'dtx.aksds.ora.uniqueResourceName'"
+  }
+]}
