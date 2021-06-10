@@ -9,6 +9,8 @@
           <props>
               <prop key="welcome.do">shc</prop>
               <prop key="list_countries.do">lacc</prop>
+              <prop key="about.do">auc</prop>
+              <prop key="contact.do">cuc</prop>
           </props>
       </property>
  </bean>
@@ -18,14 +20,17 @@
  <bean id="lacc"  class="com.nt.controller.ListAllContriesController">
      <constructor-arg name="service" ref="localeService"/>
  </bean>
+  <bean id="auc"  class="com.nt.controller.AboutUsController"/>
+  <bean id="cuc"  class="com.nt.controller.ContactUsController"/>
+  
  <!-- Service class cfg -->
  <bean id="localeService"  class="com.nt.service.LocaleMgmtServiceImpl"/>
  
  
  <!-- ViewResolver cfg -->
  <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-     <property name="prefix"  value="/WEB-INF/pages/"/>
-     <property name="suffix" value=".jsp"/>
+     <property name="prefix"  value="/WEB-INF/pages/"/>  <!-- physical location -->
+     <property name="suffix" value=".jsp"/>  <!-- Extension -->
  </bean>
 
 </beans>
