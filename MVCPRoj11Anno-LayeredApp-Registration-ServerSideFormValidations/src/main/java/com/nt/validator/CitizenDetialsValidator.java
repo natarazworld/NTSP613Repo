@@ -29,29 +29,20 @@ public class CitizenDetialsValidator  implements Validator {
 		
 		if(details.getAddrs()==null || details.getAddrs().equals("") ||details.getAddrs().length()==0)
 			errors.rejectValue("addrs","citizen.addrs.required");
-		else if(details.getAddrs().length()<10)
+		else if(details.getAddrs().length()<5)
 			errors.rejectValue("addrs","citizen.addrs.minlen");
 		
 		if(details.getAadharNo()==null )
 			errors.rejectValue("aadharNo","citizen.aadhar.required");
 		else if(String.valueOf(details.getAadharNo()).length()!=12)
 			errors.rejectValue("aadharNo","citizen.aadhar.length");
-		else {
-			try {
-			    Long.parseLong(String.valueOf(details.getAadharNo()));
-			}
-			catch(NumberFormatException nfe) {
-				errors.rejectValue("aadharNo","citizen.aadhar.integer");
-			}
-		}
+		
 		
 		if(details.getVaccineName()==null || details.getVaccineName().equalsIgnoreCase("") || details.getVaccineName().length()==0)
-			errors.rejectValue("income","citizen.vaccine.required");
+			errors.rejectValue("vaccineName","citizen.vaccine.required");
 		
 		if(details.getIncome()==null )
 			errors.rejectValue("income","citizen.income.required");
-		else if(details.getIncome().isNaN()) 
-			errors.rejectValue("income","citizen.income.double");	
 		else if (details.getIncome()<1000.0 ||  details.getIncome()>1000000.0) 
 			errors.rejectValue("income","citizen.income.range");	
 		

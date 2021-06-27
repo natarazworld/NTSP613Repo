@@ -37,7 +37,12 @@ public class CiitizenOperationsController {
 		else
 			return "citizen_register";  //LVN of form page
 		
-		
+		//application logic errors
+		 if(citizenDetails.getAddrs().equalsIgnoreCase("mumbai")) {
+			    errors.rejectValue("addrs", "addrs.location.error");
+			    //return LVN
+			    return "citizen_register";
+		 }
 		
 		//use service
 		String result=service.vaccineRegistration(citizenDetails);
