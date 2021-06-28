@@ -16,6 +16,9 @@ function validate(frm){
 	let  income=frm.income.value;
 	let  flag=true;
 	
+	 //change  hidden box value "yes" indicating the client side JS validations are performed
+      frm.vflag.value="yes";
+	
 	//write form validation logic (client side)
 	if(name==""){
 		document.getElementById("nameErr").innerHTML="<b>name is required</b>";
@@ -78,5 +81,6 @@ function validate(frm){
 		frm.income.focus();
 		flag=false;
 	}
-	return flag;
+	
+  return flag;
 }//function

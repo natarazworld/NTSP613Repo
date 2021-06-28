@@ -13,5 +13,6 @@ public class CitizenDetails {
 	private  String vaccineName;
 	private  Double  income;
 	private String remarks;
+	private  String vflag="no";
 
 }

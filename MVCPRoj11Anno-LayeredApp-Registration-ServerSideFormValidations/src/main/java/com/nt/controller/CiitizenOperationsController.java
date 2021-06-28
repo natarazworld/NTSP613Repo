@@ -29,6 +29,9 @@ public class CiitizenOperationsController {
 	public   String  regiterCitizen(Map<String,Object>  map,
 			                                           @ModelAttribute("citizen") CitizenDetails citizenDetails,
 			                                           BindingResult errors) {
+	//peform server side form validations only client side form validations are not done
+		System.out.println(citizenDetails.getVflag());
+	if(citizenDetails.getVflag().equalsIgnoreCase("no")) {
 		if(validator.supports(CitizenDetails.class)) {
 			  validator.validate(citizenDetails, errors);
 				if(errors.hasErrors())
@@ -36,6 +39,7 @@ public class CiitizenOperationsController {
 		}
 		else
 			return "citizen_register";  //LVN of form page
+		}
 		
 		//application logic errors
 		 if(citizenDetails.getAddrs().equalsIgnoreCase("mumbai")) {
