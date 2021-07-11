@@ -30,6 +30,13 @@
      <property name="basename" value="com/nt/commons/views_info"/>
  </bean>
   -->
-   <bean class="org.springframework.web.servlet.view.ResourceBundleViewResolver"/>
-     
+   <!-- bean class="org.springframework.web.servlet.view.ResourceBundleViewResolver"/> -->
+   
+   <!-- <bean class="org.springframework.web.servlet.view.XmlViewResolver">
+       <property name="location" value="/WEB-INF/cfgs/view_info.xml"/>
+   </bean>
+      -->
+      
+    <bean class="org.springframework.web.servlet.view.XmlViewResolver"/>
+      
 </beans>

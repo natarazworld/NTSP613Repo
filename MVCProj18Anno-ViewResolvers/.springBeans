@@ -9,6 +9,7 @@
 	<configs>
 		<config>src/main/webapp/WEB-INF/dispatcher-servlet.xml</config>
 		<config>src/main/webapp/WEB-INF/applicationContext.xml</config>
+		<config>src/main/webapp/WEB-INF/cfgs/view_info.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
