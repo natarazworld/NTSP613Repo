@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,7 @@ import com.nt.model.Employee;
 public class EmployeeMgmtServiceImpl implements IEmployeeMgmtService {
 	@Autowired
     private IEmployeeDAO  dao;
+	
 	@Override
 	public String uploadFiles(String destPath, Employee emp)throws Exception {
 		 File file=new File(destPath);  //E:/store
@@ -45,7 +48,22 @@ public class EmployeeMgmtServiceImpl implements IEmployeeMgmtService {
 		 emp.setPhotoFileLocation(destPath+"\\"+photoFileName);
 		 //use DAO
 		  int count=dao.insert(emp);
-		return  count==1?resumeFileName+"   "+photoFileName+" files are uploaded and emp is registered":"some problem in registration";
+		return  count==1?resumeFileName+" ,  "+photoFileName+" files are uploaded and emp is registered":"some problem in registration";
+	}
+
+	@Override
+	public List<String> getAllFiles(String destPath) throws Exception{
+	    File destStore=new File(destPath);
+	    List<String> listFiles=new ArrayList();
+	    if(destStore.exists() && destStore.isDirectory()) {
+	    	 File content[]=destStore.listFiles();
+	    	 
+	    	 for(File file:content){
+	    		 if(file.isFile())
+                        listFiles.add(file.getAbsolutePath());
+	    	 }//for
+	    }//if
+		return listFiles;
 	}
 
 }

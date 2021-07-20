@@ -1,5 +1,7 @@
 package com.nt.dao;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -17,5 +19,7 @@ public class EmployeeDAOImpl implements IEmployeeDAO {
        int count=jt.update(EMP_REGISTRATION_QUERY,emp.getEname(),emp.getAddrs(),emp.getResumeFileLocation(),emp.getPhotoFileLocation());
 		return count;
 	}
+	
+	
 
 }
