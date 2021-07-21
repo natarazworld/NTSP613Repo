@@ -8,7 +8,7 @@
          <c:forEach var="fname" items="${listFiles}">
              <tr>
                <td> ${fn:substringAfter(fname,"E:\\store\\")}</td>
-               <td><a href="donwload?fileName="+${fname}>download</a> </td>
+               <td><a href='download?fileName=${fn:replace(fname,"\\","/")}'>download</a> </td>
              </tr> 
          </c:forEach>
      </table>
