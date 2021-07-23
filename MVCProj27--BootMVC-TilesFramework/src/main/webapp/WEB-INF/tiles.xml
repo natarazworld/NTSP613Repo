@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC 
+"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+ "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+ <tiles-definitions>
+    <definition  name="baseDef"  template="/WEB-INF/pages/layout.jsp"  >
+        <put-attribute name="title"  value="" />
+        <put-attribute name="header"  value="/WEB-INF/pages/header.jsp" />
+        <put-attribute name="menu"  value="/WEB-INF/pages/menu.jsp" />
+        <put-attribute name="body"  value="" />
+        <put-attribute name="footer"  value="/WEB-INF/pages/footer.jsp" />
+    </definition>
+     <definition name="homePageDef" extends="baseDef">
+        <put-attribute name="title"  value="HomePage" />
+        <put-attribute name="body" value="/WEB-INF/pages/home.jsp"/>
+     </definition>
+       <definition name="cinemaPageDef" extends="baseDef">
+        <put-attribute name="title"  value="CinemaPage" />
+        <put-attribute name="body" value="/WEB-INF/pages/cinema.jsp"/>
+     </definition>
+     <definition name="politicsPageDef" extends="baseDef">
+        <put-attribute name="title"  value="PoliticsPage" />
+        <put-attribute name="body" value="/WEB-INF/pages/politics.jsp"/>
+     </definition>
+     <definition name="sportsPageDef" extends="baseDef">
+        <put-attribute name="title"  value="sportsPage" />
+        <put-attribute name="body" value="/WEB-INF/pages/sports.jsp"/>
+     </definition>
+     
+     
+     
+ 
+ </tiles-definitions>
+
+  
