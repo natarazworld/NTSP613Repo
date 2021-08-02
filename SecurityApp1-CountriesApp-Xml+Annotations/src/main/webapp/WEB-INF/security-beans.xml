@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-5.4.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+   <security:http  use-expressions="true">
+       <!-- Security cfg -->
+       <security:intercept-url pattern="/welcome"   access="permitAll"/>
+       <security:intercept-url  pattern="/list_countries"  access="hasAnyRole('ROLE_CUSTOMER','ROLE_AGENT')"/>
+       <security:intercept-url  pattern="/about"  access="hasRole('ROLE_VISITOR')"/>
+       <security:intercept-url  pattern="/contact"  access="hasRole('ROLE_VISITOR')"/>
+       
+      <!--  <security:http-basic/> --> <!-- enable BASIC authentication means browser generates the dialog box -->
+      <security:form-login    />
+      <security:access-denied-handler error-page="/access_denied.jsp"   />
+      <security:logout  />
+      <security:remember-me/>
+       <security:session-management >
+           <security:concurrency-control  error-if-maximum-exceeded="true"  max-sessions="2"/>
+       </security:session-management>
+   </security:http>
+
+    <security:authentication-manager>
+       <security:authentication-provider>
+           <security:password-encoder hash="bcrypt" />
+         <security:user-service >
+          
+          <security:user  name="raja" password="$2a$10$qOLIro4wL5u8yqAKdKzvMe7AQWwaY4i2QhJWahWwg/J3VFPkt7k9y" authorities="ROLE_AGENT"  locked="true"/>
+          <security:user name="rani" password="$2a$10$qOLIro4wL5u8yqAKdKzvMe7AQWwaY4i2QhJWahWwg/J3VFPkt7k9y" authorities="ROLE_CUSTOMER"/>
+            <security:user name="suresh" password="$2a$10$JASPNcGdfTgH0Jwdi5Uf8.5IMkn7N8IN3t8tkw7AXCjXqcFjCFwZy" authorities="ROLE_VISITOR"/>
+            <security:user name="king" password="$2a$10$tntCgf3QAXlKtNDVUIvLC.x/vyV1XuzmQij6iPphTMKznQvv6lepO" authorities="ROLE_CUSTOMER,ROLE_AGENT"/>
+         </security:user-service>
+       <!--    <security:user-service>
+              <security:user name="raja" password="{noop}rani" authorities="ROLE_AGENT"/>
+              <security:user name="rani" password="{noop}rani" authorities="ROLE_CUSTOMER"/>
+            <security:user name="suresh" password="{noop}hyd" authorities="ROLE_VISITOR"/>
+            <security:user name="king" password="{noop}delhi" authorities="ROLE_CUSTOMER,ROLE_AGENT"/>
+          </security:user-service> -->
+       </security:authentication-provider>
+    </security:authentication-manager>
+
+</beans>
