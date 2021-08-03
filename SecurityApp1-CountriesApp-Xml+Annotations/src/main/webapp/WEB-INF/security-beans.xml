@@ -25,7 +25,17 @@
    </security:http>
 
     <security:authentication-manager>
-       <security:authentication-provider>
+        <security:authentication-provider>
+            <security:jdbc-user-service data-source-ref="ds" 
+                                                           users-by-username-query="SELECT UNAME,PWD,STATUS FROM USERS WHERE UNAME=?"
+                                                           authorities-by-username-query="SELECT UNAME,ROLE  FROM USER_ROLES WHERE UNAME=?" />
+        </security:authentication-provider>
+    
+     <!--  <security:authentication-provider>
+         <security:user-service properties="classpath:com/nt/commons/info.properties"/>
+      </security:authentication-provider> -->
+    
+       <!-- <security:authentication-provider>
            <security:password-encoder hash="bcrypt" />
          <security:user-service >
           
@@ -33,14 +43,14 @@
           <security:user name="rani" password="$2a$10$qOLIro4wL5u8yqAKdKzvMe7AQWwaY4i2QhJWahWwg/J3VFPkt7k9y" authorities="ROLE_CUSTOMER"/>
             <security:user name="suresh" password="$2a$10$JASPNcGdfTgH0Jwdi5Uf8.5IMkn7N8IN3t8tkw7AXCjXqcFjCFwZy" authorities="ROLE_VISITOR"/>
             <security:user name="king" password="$2a$10$tntCgf3QAXlKtNDVUIvLC.x/vyV1XuzmQij6iPphTMKznQvv6lepO" authorities="ROLE_CUSTOMER,ROLE_AGENT"/>
-         </security:user-service>
+         </security:user-service> -->
        <!--    <security:user-service>
               <security:user name="raja" password="{noop}rani" authorities="ROLE_AGENT"/>
               <security:user name="rani" password="{noop}rani" authorities="ROLE_CUSTOMER"/>
             <security:user name="suresh" password="{noop}hyd" authorities="ROLE_VISITOR"/>
             <security:user name="king" password="{noop}delhi" authorities="ROLE_CUSTOMER,ROLE_AGENT"/>
           </security:user-service> -->
-       </security:authentication-provider>
+       <!-- </security:authentication-provider> -->
     </security:authentication-manager>
 
 </beans>

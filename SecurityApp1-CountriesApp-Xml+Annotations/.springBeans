@@ -11,6 +11,7 @@
 		<config>src/main/webapp/WEB-INF/service-beans.xml</config>
 		<config>src/main/webapp/WEB-INF/security-beans.xml</config>
 		<config>src/main/webapp/WEB-INF/applicationContext.xml</config>
+		<config>src/main/webapp/WEB-INF/persistence-beans.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
