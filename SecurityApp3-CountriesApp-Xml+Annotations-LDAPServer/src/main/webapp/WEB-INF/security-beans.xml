@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-5.4.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+   <security:http  use-expressions="true">
+       <!-- Security cfg -->
+       <security:intercept-url pattern="/welcome"   access="permitAll"/>
+       <security:intercept-url  pattern="/list_countries"  access="hasAnyRole('ROLE_CUSTOMER','ROLE_AGENT')"/>
+       <security:intercept-url  pattern="/about"  access="hasRole('ROLE_VISITOR')"/>
+       <security:intercept-url  pattern="/contact"  access="hasRole('ROLE_VISITOR')"/>
+       
+      <!--  <security:http-basic/> --> <!-- enable BASIC authentication means browser generates the dialog box -->
+      <security:form-login    />
+      <security:access-denied-handler error-page="/access_denied.jsp"   />
+      <security:logout  />
+      <security:remember-me/>
+       <security:session-management >
+           <security:concurrency-control  error-if-maximum-exceeded="true"  max-sessions="2"/>
+       </security:session-management>
+   </security:http>
+
+    <security:authentication-manager>
+     <security:ldap-authentication-provider
+			user-search-filter="(uid={0})" user-search-base="ou=users"
+			group-search-filter="(uniqueMember={0})" group-search-base="ou=groups"
+			group-role-attribute="cn" role-prefix="ROLE_">
+		</security:ldap-authentication-provider>
+    
+     </security:authentication-manager>
+     
+     <security:ldap-user-service server-ref="ldapServer" user-search-filter="(uid={0})" />
+	<security:ldap-server id="ldapServer" url="ldap://localhost:10389/o=nit"
+		manager-dn="uid=admin,ou=system" manager-password="secret" />
+
+</beans>
